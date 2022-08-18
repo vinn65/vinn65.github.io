@@ -1,0 +1,1 @@
+web gunicorn StudentStudyPortal.wsgi:application --log-file -
