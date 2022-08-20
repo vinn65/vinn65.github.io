@@ -16,8 +16,16 @@ Including another URLconf
 from django.urls.conf import include
 from django.contrib import admin
 from django.urls import path
+from Dashboard import views as dash_views
+from django.contrib.auth import views as views1
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('Dashboard.urls')),
+    path('register/',dash_views.register,name="register"),
+    path('login/',views1.LoginView.as_view(template_name="Dashboard/login.html"),name='login'),
+    path('profile/',dash_views.profile,name="profile"),
+     path('logout/',views1.LogoutView.as_view(template_name="Dashboard/logout.html"),name='logout'),
+   
+   
 ]

@@ -20,21 +20,22 @@
                 <th scope="row">{{forloop.counter}}</th>
                 <td>{{item.title}}</td>
                 <td>
-                    <a href="#">
+                    <a href="{% url 'update-todo' item.id %}">
                         <div class="form-check">
                             {% if item.is_finished == True %}
-                            <input class="form-check-input" type="checkbox" value="" checked >
+                            <input class="form-check-input" type="checkbox" value="" checked>
                             {% else %}
-                            <input class="form-check-input" type="checkbox" value=""   >
+                            <input class="form-check-input" type="checkbox" value="" >
+                            {% endif %}
                             <label class="form-check-label text-light" for="flexCheckDefault">
                                 Mark as Completed
                             </label>
-                            {% endif %} 
+                            
                         </div>
                     </a>
                 </td>
 
-                <td><a href="#"><i class="fa fa-trash fa-2x"></i></a></td>
+                <td><a href="{% url 'deletet' item.id %}"><i class="fa fa-trash fa-2x"></i></a></td>
             </tr>
               
             {% endfor %}

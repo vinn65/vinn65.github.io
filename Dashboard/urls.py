@@ -12,4 +12,10 @@ urlpatterns = [
     path('delete-homework/<int:pk>/',views.delete_homework, name='deleteh'),
     path('youtube/',views.youtube, name='youtube'),
     path('todo/',views.todo, name='todo'),
+    path('update-todo/<int:pk>/',views.update_todo, name='update-todo'),
+     path('delete-todo/<int:pk>/',views.delete_todo, name='deletet'),
+    path('books/',views.books, name='books'),
+    path('dictionary/',views.dictionary, name='dictionary'),
+    path('conversion/',views.conversion, name='conversion'),
+    path('wiki/',views.wiki, name='wiki'),
 ]
